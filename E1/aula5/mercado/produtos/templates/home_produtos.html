@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Market System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg: #0a0f1c;
+            --card: #121a2b;
+            --primary: #1e3a8a;
+            --accent: #3b82f6;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            display: flex;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: var(--card);
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .sidebar a:hover {
+            background: var(--primary);
+        }
+
+        /* Main */
+        .main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .header input {
+            padding: 8px;
+            border-radius: 6px;
+            border: none;
+            background: var(--card);
+            color: var(--text);
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: var(--card);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--primary);
+        }
+
+        tr:nth-child(even) {
+            background: #0f172a;
+        }
+
+        button {
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            background: var(--accent);
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>MarketSys</h2>
+        <a href="{% url 'home' %}">Dashboard</a>
+        <a href="{% url 'produtos:home' %}">Produtos</a>
+        <a href="#">Clientes</a>
+        <a href="#">Vendas</a>
+        <a href="#">Compras</a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Produtos</h1>
+            <input type="text" id="search" placeholder="Buscar...">
+        </div>
+
+    <script>
+        // Busca simples na tabela
+        const searchInput = document.getElementById("search");
+
+        searchInput.addEventListener("keyup", function () {
+            let filter = searchInput.value.toLowerCase();
+            let rows = document.querySelectorAll("#table tbody tr");
+
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(filter) ? "" : "none";
+            });
+        });
+
+        // Simulação de dados dinâmicos
+        function updateDashboard() {
+            document.getElementById("prod-count").innerText = Math.floor(Math.random() * 200);
+            document.getElementById("client-count").innerText = Math.floor(Math.random() * 100);
+            document.getElementById("sales-count").innerText = Math.floor(Math.random() * 300);
+            document.getElementById("buy-count").innerText = Math.floor(Math.random() * 150);
+        }
+
+        setInterval(updateDashboard, 5000);
+    </script>
+
+</body>
+</html>
