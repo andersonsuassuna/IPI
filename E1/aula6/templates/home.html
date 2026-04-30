@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Escolar</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <header>
+    <h2>Portal Escolar</h2>
+    <nav>
+      <a href="/">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <a href="{% url 'aluno:home_aluno' %}">Área do Aluno</a>
+      <a href="{% url 'aluno:lista_alunos' %}">Lista de Alunos</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bem-vindo ao Portal Escolar</h1>
+      <p>Educação, organização e tecnologia em um só lugar.</p>
+      <a href="{% url 'aluno:home_aluno' %}" class="btn">Entrar na Área do Aluno</a>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Notas</h3>
+      <p>Acompanhe o desempenho acadêmico de forma rápida.</p>
+    </div>
+
+    <div class="card">
+      <h3>Horários</h3>
+      <p>Consulte suas aulas e mantenha sua rotina organizada.</p>
+    </div>
+
+    <div class="card">
+      <h3>Comunicados</h3>
+      <p>Fique por dentro de avisos e eventos importantes.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Portal Escolar - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    console.log('Portal Escolar carregado com sucesso!');
+  </script>
+
+</body>
+</html>

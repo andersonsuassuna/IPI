@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h2>Área do Aluno</h2>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'aluno:lista_alunos' %}">Lista</a>
+            <a href="#horarios">Horários</a>
+            <a href="#materiais">Materiais</a>
+            <a href="#perfil">Perfil</a>
+        </nav>
+    </header>
+
+    <section class="cards">
+        <div class="card" id="notas">
+            <h3>Minhas Notas</h3>
+            <p>Consulte suas notas e desempenho por disciplina.</p>
+        </div>
+
+        <div class="card" id="horarios">
+            <h3>Horários</h3>
+            <p>Veja sua grade de aulas e organize sua rotina.</p>
+        </div>
+
+        <div class="card" id="materiais">
+            <h3>Materiais</h3>
+            <p>Acesse conteúdos, atividades e materiais de estudo.</p>
+        </div>
+
+        <div class="card" id="perfil">
+            <h3>Perfil</h3>
+            <p>Gerencie seus dados e acompanhe informações pessoais.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Portal Escolar - Área do Aluno</p>
+    </footer>
+
+</body>
+</html>
