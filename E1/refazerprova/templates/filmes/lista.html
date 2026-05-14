@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>Lista</title>
+    <link rel="stylesheet" href="{% static 'css/lista.css' %}">
+{% endblock %}
+
+{% block main %}
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <div class="content-header">
+                <div class="breadcrumb">
+                    <a href="{% url 'home' %}">Início</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Lista de Filmes</span>
+                </div>
+                <h2 class="page-title">Lista de Filmes</h2>
+            </div>
+
+            <div class="list-controls">
+                <div class="search-box-container">
+                    <input type="text" class="search-box" placeholder="🔍 Buscar itens...">
+                </div>
+                <button class="btn btn-primary btn-add">
+                    <span class="btn-icon">➕</span>
+                    Adicionar Novo
+                </button>
+            </div>
+
+            <div class="items-container">
+                <!-- Os alunos devem usar um loop para exibir os itens aqui -->
+                <!-- Exemplo de estrutura de um item: -->
+                <div class="item-card">
+                    <div class="item-content">
+                        <div class="item-header">
+                            <h3 class="item-title">Título do Filme</h3>
+                            <span class="item-badge">Categoria</span>
+                        </div>
+                        <p class="item-description">Detalhes do filme aqui</p>
+                        <div class="item-meta">
+                            <span class="meta-item">📅 Data</span>
+                            <span class="meta-item">👤 Autor</span>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <a href="{% url 'filmes:detalhe' %}" class="btn-action btn-view" title="Ver detalhes">
+                            <span>👁️</span>
+                        </a>
+                        <a href="#" class="btn-action btn-edit" title="Editar">
+                            <span>✏️</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mais itens devem ser gerados dinamicamente com loop -->
+            </div>
+        </main>
+{% endblock %}
