@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Perfil do Aluno</h2>
+    <div style="background: white; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+        <p>Nome: João Silva</p>
+        <p>Matrícula: 202410140001</p>
+        <p>Curso: Técnico em Informática</p>
+        <p>E-mail: joao.silva@escolar.edu.br</p>
+        <p>Status: Ativo</p>
+    </div>
+    <br>
+    <a href="{% url 'alunos:lista' %}" class="btn btn-ver">Voltar</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Cadastrar Novo Aluno</h2>
+    <form style="display: flex; flex-direction: column; max-width: 400px; gap: 10px;">
+        <label>Nome Completo:</label>
+        <input type="text" name="nome">
+        
+        <label>Matrícula:</label>
+        <input type="text" name="matricula">
+        
+        <label>Curso:</label>
+        <select>
+            <option>Informática</option>
+            <option>Edificações</option>
+            <option>Eletrotécnica</option>
+        </select>
+        
+        <button type="button" class="btn btn-novo">Salvar (Simulação)</button>
+    </form>
+    <br>
+    <a href="{% url 'alunos:lista' %}">Voltar para a lista</a>
+{% endblock %}

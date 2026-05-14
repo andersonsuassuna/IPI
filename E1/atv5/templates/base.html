@@ -1,65 +1,30 @@
-{% block head %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escola - Home</title>
+    <title>{% block title %}Sistema Escolar{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-
     <header>
+        <div class="logo">
+            <!-- Certifique-se de que a imagem existe em alunos/static/alunos/img/logo.png -->
+            <img src="{% static 'alunos/img/logo.png' %}" alt="Logo IFRN" height="50">
+        </div>
         <nav>
-            <h1>Escola</h1>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="{% url 'alunos:home_alunos' %}">Área do Aluno</a></li>
-            </ul>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'alunos:lista' %}">Lista de Alunos</a>
         </nav>
     </header>
 
-    {% endblock %}
-
     <main class="container">
-
-        <section class="hero">
-            <h2>Bem-vindo ao sistema escolar</h2>
-            <p>Gerencie alunos, notas, frequência e muito mais.</p>
-            <a href="{% url 'alunos:home_alunos' %}" class="btn">Entrar na Área do Aluno</a>
-        </section>
-
-        <section class="cards">
-
-            <div class="card">
-                <h3>Alunos</h3>
-                <p>Cadastro e gerenciamento de alunos.</p>
-            </div>
-
-            <div class="card">
-                <h3>Notas</h3>
-                <p>Acompanhe desempenho escolar.</p>
-            </div>
-
-            <div class="card">
-                <h3>Frequência</h3>
-                <p>Controle de presença.</p>
-            </div>
-
-        </section>
-
+        {% block content %}
+        {% endblock %}
     </main>
 
-    {% block foot %}
-
     <footer>
-        <p>
-            Esse é o footer
-        </p>
+        <p>&copy; 2026 - Sistema de Gestão Escolar - IFRN</p>
     </footer>
-
 </body>
 </html>
-
-{% endblock %}

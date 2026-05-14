@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Lista de Alunos</h2>
+    <a href="{% url 'alunos:novo' %}" class="btn btn-novo">Novo Aluno</a>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>João Silva</td>
+                <td>Informática</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="btn btn-ver">Ver</a></td>
+            </tr>
+            <tr>
+                <td>Maria Souza</td>
+                <td>Edificações</td>
+                <td><a href="{% url 'alunos:detalhe' %}" class="btn btn-ver">Ver</a></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
