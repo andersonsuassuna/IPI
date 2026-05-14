@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% load static %}
+
+{% endblock %}
+
+    <main class="container">
+
+        <section class="hero">
+            <h2>Bem-vindo ao sistema escolar</h2>
+            <p>Gerencie alunos, notas, frequência e muito mais.</p>
+            <a href="{% url 'alunos:home_alunos' %}" class="btn">Entrar na Área do Aluno</a>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Alunos</h3>
+                <p>Cadastro e gerenciamento de alunos.</p>
+            </div>
+
+            <div class="card">
+                <h3>Notas</h3>
+                <p>Acompanhe desempenho escolar.</p>
+            </div>
+
+            <div class="card">
+                <h3>Frequência</h3>
+                <p>Controle de presença.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    {% block foot %}
+
+    {% endblock %}

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Área do Aluno</h1>
+            <ul>
+                <li><a href="{% url 'home' %}">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <h2>Painel do Aluno</h2>
+            <p>Acompanhe suas informações acadêmicas.</p>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>Minhas Notas</h3>
+                <p>Visualize suas avaliações.</p>
+            </div>
+
+            <div class="card">
+                <h3>Minha Frequência</h3>
+                <p>Consulte suas presenças.</p>
+            </div>
+
+            <div class="card">
+                <h3>Perfil</h3>
+                <p>Atualize seus dados.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
