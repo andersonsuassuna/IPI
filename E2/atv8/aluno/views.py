@@ -17,14 +17,16 @@ def produtos_view(request):
 
 def vitrine(request):
    contexto = {
-       'titulo': 'Vitrine', # string
-       'total': 3, # número
-       'produtos': [
-           'Camiseta',
-           'Calça',
-           'Boné',
-       ], # lista
-       'promocao': True, # booleano
+        'titulo': 'Vitrine', # string
+        'total': 5, # número
+        'promocao': True, # booleano
+        'produtos': [
+            {'nome': 'Camiseta', 'preco': 39.90},
+            {'nome': 'Calça Jeans', 'preco': 129.90},
+            {'nome': 'Boné', 'preco': 45.00},
+            {'nome': 'Tênis', 'preco': 219.90},
+            {'nome': 'Meia', 'preco': 59.90},
+        ]
    }
    return render(request, 'vitrine.html', contexto)
 
