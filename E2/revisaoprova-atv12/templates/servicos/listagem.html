@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Portfólio de Atendimento</h2>
+    <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: left;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Serviço</th>
+                <th>Profissional Responsável</th>
+                <th>Tempo Estimado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in servicos %}
+            <tr>
+                <td><a href="{% url 'detalhe_servico' s.id %}">{{ s.id }}</a></td>
+                <td>{{ s.nome_servico }}</td>
+                <td>{{ s.responsavel }}</td>
+                <td>{{ s.tempo_estimado }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

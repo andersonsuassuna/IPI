@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin</title>
+    <!-- Bloco 1: Estilos -->
+    {% block estilo %}{% endblock %}
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0;">
+
+    <!-- Include 1: Navbar -->
+    {% include 'partials/_navbar.html' %}
+
+    <main style="padding: 20px;">
+        <!-- Bloco 2: Conteúdo Dinâmico -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Include 2: Footer -->
+    {% include 'partials/_footer.html' %}
+
+</body>
+</html>

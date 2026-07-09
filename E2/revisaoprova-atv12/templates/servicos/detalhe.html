@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'lista_servicos' %}">← Voltar para lista</a>
+    <hr>
+    {% if servico %}
+        <h1>Ficha Técnica: {{ servico.nome_servico }}</h1>
+        <ul>
+            <li><strong>Profissional:</strong> {{ servico.responsavel }}</li>
+            <li><strong>Tempo Estimado:</strong> {{ servico.tempo_estimado }}</li>
+        </ul>
+        <h3>Pré-Requisitos e Especificações:</h3>
+        <p>{{ servico.requisitos }}</p>
+    {% else %}
+        <p>Serviço não encontrado.</p>
+    {% endif %}
+{% endblock %}

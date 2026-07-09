@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'lista_produtos' %}">← Voltar para lista</a>
+    <hr>
+    {% if produto %}
+        <h1 style="font-size: 2.5em;">{{ produto.nome }}</h1>
+        <h2 style="color: green; background-color: #e0f7fa; display: inline-block; padding: 10px;">
+            R$ {{ produto.preco }}
+        </h2>
+        <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
+        <p><strong>Descrição Completa:</strong> <br> {{ produto.descricao }}</p>
+    {% else %}
+        <p>Produto não encontrado.</p>
+    {% endif %}
+{% endblock %}
