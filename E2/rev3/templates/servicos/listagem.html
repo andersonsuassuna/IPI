@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Responsável</th>
+        <th>Tempo</th>
+    </tr>
+    {% for servico in servicos %}
+    <tr><a href="">{{ servico.id }}</a></tr>
+    <tr>{{ servico.nome }}</tr>
+    <tr>{{ servico.responsavel }}</tr>
+    <tr>{{ servico.tempo_estimado }}</tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

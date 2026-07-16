@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Responsável</th>
+        <th>Tempo</th>
+    </tr>
+    {% for servico in servicos %}
+    <tr>
+        <td><a href="{% url 'servicos:detalhe_servicos' servico.id %}">{{ servico.id }}</a></td>
+        <td>{{ servico.nome }}</td>
+        <td>{{ servico.responsavel }}</td>
+        <th>{{ servico.tempo }}</th>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

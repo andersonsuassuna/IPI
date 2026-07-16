@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ servico.nome }}</h1>
+<p>Responsável: {{ servico.responsavel }}</p>
+<p>Tempo: {{ servico.tempo_estimado }}</p>
+<p>Requisitos: {{ servico.requisitos }}</p>
+{% endblock %}
