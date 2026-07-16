@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+  <main>
+    <h2>Bem-vindo(a)!</h2>
+    <p>Estamos felizes em ter você aqui. Navegue pelo menu para conhecer nosso catálogo de jogos.</p>
+    <a href="{% url 'jogos:listagem' %}" class="botao">Ver catálogo</a>
+  </main>
+{% endblock %}

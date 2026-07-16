@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Detalhes {% endblock %}
+
+{% block content %}
+  <main>
+    <h2>Detalhes do Item</h2>
+
+    <div class="cartao-detalhes">
+      <a href="{% url 'jogos:listagem' %}" class="voltar">&larr; Voltar ao catálogo</a>
+
+      <ul class="lista-detalhes">
+        <li>
+          <span class="rotulo">Título</span>
+          <span class="valor">{{ jogo.titulo }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Desenvolvedora</span>
+          <span class="valor">{{ jogo.desenvolvedora }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Ano</span>
+          <span class="valor">{{ jogo.ano }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Gênero</span>
+          <span class="valor">{{ jogo.genero }}</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+{% endblock %}
