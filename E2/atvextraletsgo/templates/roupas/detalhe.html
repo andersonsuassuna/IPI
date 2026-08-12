@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Detalhes {% endblock %}
+
+{% block content %}
+  <main>
+    <h2>Detalhes do Item</h2>
+
+    <div class="cartao-detalhes">
+      <a href="{% url 'roupas:listagem' %}" class="voltar">&larr; Voltar ao catálogo</a>
+
+      <ul class="lista-detalhes">
+        <li>
+          <span class="rotulo">Nome</span>
+          <span class="valor">{{ roupa.nome }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Marca</span>
+          <span class="valor">{{ roupa.marca }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Preço</span>
+          <span class="valor">{{ roupa.preco }}</span>
+        </li>
+        <li>
+          <span class="rotulo">Tamanho</span>
+          <span class="valor">{{ roupa.tamanho }}</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+{% endblock %}
