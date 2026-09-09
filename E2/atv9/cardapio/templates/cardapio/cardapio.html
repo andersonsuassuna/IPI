@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Geek Burger</title>
+</head>
+<body>
+
+    <h1>{{ nome_loja }}</h1>
+
+    {% if loja_aberta %}
+        <p style="color: green;">Estamos Abertos!</p>
+    {% else %}
+        <p style="color: red;">Fechado no momento</p>
+    {% endif %}
+
+    <h2>Promoção do dia</h2>
+
+    <p>{{ promocao_do_dia }}</p>
+
+    <h2>Nosso cardápio</h2>
+
+    <ul>
+        {% for lanche in lanches %}
+            <li>{{ lanche }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
