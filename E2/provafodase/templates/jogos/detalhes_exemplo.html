@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <main>
+    <h2>Detalhes do Item</h2>
+
+    <div class="cartao-detalhes">
+      <a href="listagem.html" class="voltar">&larr; Voltar ao catálogo</a>
+
+      <ul class="lista-detalhes">
+        <li>
+          <span class="rotulo">Informação 1</span>
+          <span class="valor">Item de exemplo 01</span>
+        </li>
+        <li>
+          <span class="rotulo">Informação 2</span>
+          <span class="valor">Categoria A</span>
+        </li>
+        <li>
+          <span class="rotulo">Informação 3</span>
+          <span class="valor">R$ 00,00</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+{% endblock %}
